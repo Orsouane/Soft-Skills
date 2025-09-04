@@ -1,0 +1,177 @@
+/* HeaderComponent.module.css */
+
+/* Stili generali per l'header */
+.header {
+  background-color: #f9efdb;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+
+  width: 100%;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* Menu */
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #f9efdb;
+}
+
+/* Link dentro il menu, usando NavLink */
+.header li a,
+.header li .myLink {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Hover su link */
+.header li a:hover,
+.header li .myLink:hover,
+.menuBtn:hover {
+  background-color: #9dbc98;
+  border-radius: 30px;
+}
+
+/* Link attivo (stato corrente) per NavLink */
+.myLink.active {
+  color: #ff6600; /* Cambia colore per l'elemento attivo */
+  font-weight: bold;
+}
+
+/* Logo */
+.logo {
+  display: block;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Menu mobile */
+.menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.menu.open {
+  max-height: 240px;
+}
+
+/* Icona hamburger per il menu */
+.menuIcon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.navicon:before,
+.navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.navicon:before {
+  top: 5px;
+}
+
+.navicon:after {
+  top: -5px;
+}
+
+/* Gestione del menu mobile */
+.menuBtn {
+  display: none;
+}
+
+.menuBtn:checked ~ .menuIcon .navicon {
+  background: transparent;
+}
+
+.menuBtn:checked ~ .menuIcon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menuBtn:checked ~ .menuIcon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menuBtn:checked ~ .menuIcon:not(.steps) .navicon:before,
+.menuBtn:checked ~ .menuIcon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* Layout desktop */
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a,
+  .header li .myLink {
+    padding: 5px 30px;
+    margin-top: 15px;
+  }
+  .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .menuIcon {
+    display: none;
+  }
+}
+
+/* Font */
+.FontHeaderFooter {
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 401;
+  font-style: normal;
+}
+
+.jumbotron {
+  position: relative;
+  width: 100%;
+  max-height: 800px;
+  margin-bottom: 70px;
+  overflow: hidden;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease;
+}
+
+/* Header-container */
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+

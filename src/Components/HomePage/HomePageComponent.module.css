@@ -1,0 +1,29 @@
+.img {
+  aspect-ratio: 16/9;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.cardbody {
+  background-color: #f9efdb;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title,
+.card-text {
+  margin-bottom: 1rem;
+}
